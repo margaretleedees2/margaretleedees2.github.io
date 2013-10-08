@@ -33,7 +33,7 @@ Octopress: A blogging framework for hackers
 <https://speakerdeck.com/glidenote/octopress>
 
 
-There are even 3rd Party Octopress Themes.  I'm trying one out now called 'Whitespace' by Lucas Lew.  Like?  My only problem is, I'm still figuring out how to customize the markdown.  I'm getting closer.... This link tells you where to go to customize other attributes in the header, aside etc., but still not quite there.....
+There are even 3rd Party Octopress Themes.  I'm going to try one out now called 'Whitespace' by Lucas Lew.  I'm still figuring out how to customize the markdown.  I'm getting closer.... This link tells you where to go to customize other attributes in the header, aside etc., but i have a little more work to do.
 
 <http://octopress.org/docs/theme/template/>
 
