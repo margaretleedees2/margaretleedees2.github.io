@@ -4,7 +4,7 @@
   <title><![CDATA[Margaret's Octopress Blog]]></title>
   <link href="http://margaretleedees2.github.io/atom.xml" rel="self"/>
   <link href="http://margaretleedees2.github.io/"/>
-  <updated>2013-10-08T04:00:40-04:00</updated>
+  <updated>2013-10-08T04:25:36-04:00</updated>
   <id>http://margaretleedees2.github.io/</id>
   <author>
     <name><![CDATA[Margaret Lee]]></name>
@@ -18,37 +18,37 @@
     <link href="http://margaretleedees2.github.io/blog/2013/10/08/cookin-wit-git/"/>
     <updated>2013-10-08T01:02:00-04:00</updated>
     <id>http://margaretleedees2.github.io/blog/2013/10/08/cookin-wit-git</id>
-    <content type="html"><![CDATA[<p>This is a journey of a housewife learning to code.  Over the years, I&rsquo;ve become quite a creative chef trying to feed two very picky eaters.  Pureed cauliflower in mac-in-cheese, dates in quinoa in banana bread, and beets in raspberry sorbet.  I thought code would be sort of like cooking.  Start with a recipe, add a pinch of this and a little dash of that, and voila.   Er uh, not really.  Over the past few weeks, there are days where I feel as though I&rsquo;ve been dropped in the middle Iron Chef-Japan and I don&rsquo;t speak the language.  What? Theme ingredient is sea urchin and the course is dessert?  Hmmmmm.</p>
+    <content type="html"><![CDATA[<p>This is a journey of a housewife learning to code.  Over the years, I&rsquo;ve become quite a creative chef trying to feed two very picky eaters.  Pureed cauliflower in mac-in-cheese, dates and quinoa in banana bread, and beets in raspberry sorbet.  I thought code would be sort of like cooking.  Start with a recipe, add a pinch of this and a little dash of that, and voila.   Er uh, not really.  Over the past few weeks, there are days where I feel as though I&rsquo;ve been dropped in the middle Iron Chef-Japan and I don&rsquo;t speak the language.  What? Theme ingredient is sea urchin and the course is dessert?  Hmmmmm.</p>
 
-<p>Almost two weeks ago we started with Git.  Very cool to clone and push.  Although I am still afraid of Master.  Took time, but &lsquo;fork&rsquo; has new meaning to me now.  So does .slice, .split, .push, .pop and scrape after last week&rsquo;s Ruby melee.  Writing those methods into a command line definitely makes me feel like this week&rsquo;s IC Hiroyuki Sakai.</p>
+<p>Almost two weeks ago we started with Git.  Very cool to clone and push.  Although I am still afraid of Master.  Took time, but &lsquo;fork&rsquo; now has new meaning to me.  As do &lsquo;.slice,&rsquo; &lsquo;.split,&rsquo; &lsquo;.push,&rsquo; &lsquo;.pop&rsquo; and &lsquo;scrape&rsquo; after last week&rsquo;s Ruby binge.  Writing those words can make anyone feel like this week&rsquo;s I.C. Master Hiroyuki Sakai.</p>
 
-<p>This week we&rsquo;re starting to blog.  I purposefully put off forming accounts for Facebook, LinkedIn and Twitter for fear that she would spend time connecting people from my childhood vs. connecting with my children.  Now. Plus, what did I have to say?  Its a big step to be blogging.  About code.</p>
+<p>This week we&rsquo;re starting to blog.  For years, I purposefully put off forming accounts for Facebook, LinkedIn and Twitter for fear that I would lose myself in a vortex of connecting with childhood friends vs. connecting with my own children.  Plus, what did I have to say out there on the fringes of the web?  Its a big step to be blogging.  About code nonetheless.</p>
 
-<p>Will get to Ruby in the next blog, but for now, lets talk about the matter at hand: Git&rsquo;s Octopress.  I was just trying to get a sense of the various blog engines and stumbled on this brief overview which lists Octopress&rsquo;s pros.</p>
+<p>Will get to Ruby in the next blog, but for now, lets talk about the matter at hand: Git&rsquo;s Octopress.  I was just trying to get a sense of the various blog engines out there and stumbled on this brief overview which lists Octopress&rsquo;s pros.</p>
 
 <p><a href="http://blog.tealdi.com.br/2013/07/11/why-ive-chosen-octopress">http://blog.tealdi.com.br/2013/07/11/why-ive-chosen-octopress</a></p>
 
 <p>Tealdi sums it up nicely:
-&ldquo;Octopress is a simple framework designed for Jekyll, that is powering GitHub Pages. Jekyll is a simple, lightweight static site generator written in Ruby. It takes a template directory (representing the raw form of a website), runs it through Textile or Markdown and Liquid converters, and spits out a complete, static website suitable for serving with Apache or your favorite web server.&rdquo;</p>
+&ldquo;Octopress is a simple framework designed for Jekyll, that is powering GitHub Pages. Jekyll is a simple, lightweight static site generator written in Ruby. It takes a template directory (representing the raw form of a website), runs it through Textile or Markdown and Liquid converters, and spits out a complete, static website suitable for serving with Apache or your favorite web server.&rdquo;  Wow, clear even to the foreigner!</p>
 
-<p>There&rsquo;s a neat little presentation speakerdeck.com called &ldquo;Octopress: A blogging framework for hackers&rdquo; by Akira Maeda. A propos. While others are probably blogging about scraping websites with Nokogiri, I&rsquo;m blogging about how to blog.  Baby steps.</p>
+<p>There&rsquo;s a neat little presentation speakerdeck.com called &ldquo;Octopress: A blogging framework for hackers&rdquo; by Akira Maeda. A propos.  A little sad but while others are probably blogging about scraping websites with Nokogiri, I&rsquo;m blogging about how to blog.  Baby steps.</p>
 
 <p>Within the Presentation, very simple guideposts:
 &ndash; Write Markdown
 &ndash; Generate
-&ndash; Deploy</p>
+&ndash; Deploy <em>I love this word and use it to launch my children off to school</em></p>
 
 <h2>Octopress: A blogging framework for hackers</h2>
 
 <p><a href="https://speakerdeck.com/glidenote/octopress">https://speakerdeck.com/glidenote/octopress</a></p>
 
-<p>There are even 3rd Party Octopress Themes.  I&rsquo;m trying one out now called &lsquo;Whitespace by Lucas Lew.  Like?  My only problem is, I&rsquo;m still figuring out how to customize the markdown.  I&rsquo;m getting closer&hellip;. This link tells you where to go to customize other attributes in the header, aside etc., but still not quite there&hellip;..</p>
+<p>There are even 3rd Party Octopress Themes.  I&rsquo;m trying one out now called &lsquo;Whitespace&rsquo; by Lucas Lew.  Like?  My only problem is, I&rsquo;m still figuring out how to customize the markdown.  I&rsquo;m getting closer&hellip;. This link tells you where to go to customize other attributes in the header, aside etc., but still not quite there&hellip;..</p>
 
 <p><a href="http://octopress.org/docs/theme/template/">http://octopress.org/docs/theme/template/</a></p>
 
 <p>Octopress utilizes the &ldquo;usual&rdquo; Git commands to commit your source code to the blog (git add/commit/push).  I feel like I&rsquo;m getting &ldquo;bonus&rdquo; practice on Git while I learn about blogging.</p>
 
-<p>I bid you good eating.  Next up, Ruby with IC octopodafeline.</p>
+<p>I bid you good eating.  Next up, Ruby with guest appearance from I.C. octopodafeline.</p>
 ]]></content>
   </entry>
   
