@@ -65,13 +65,11 @@
 	</header>
 	<div class="entry-content"><p>At the end of last week, we discussed inheritance and modules.  I needed to review it as not all of it had sunk-in at runtime-lecture.  So here goes:</p>
 
-<p>If Ruby Classes free us from redunancy by making certain methods available to all instances of that class, then inheritance seems to build on that notion of &ldquo;sharing code&rdquo; in that it allow a Class to make its capabilities available to a sub-class(es) which can then include further specificity and additional methods.</p>
+<p>If one of the many purposes of Ruby Classes is to help free us from redunancy by making certain methods available to all instances of that class.  Along that line it seems inheritance builds on the notion of &ldquo;sharing&rdquo; in that it allows a Class to make its capabilities available to sub-classes and include further specificity and/or additional methods where necessary.</p>
 
-<p>When I looked it up, people liked using various taxonomies to help illustrate <a href="http://www.rubist.net/~slagell/ruby/inheritance.html">this</a>.</p>
+<p>As I researched inheritance up, people liked using taxonomies to help illustrate <a href="http://www.rubist.net/~slagell/ruby/inheritance.html">this</a>. I&rsquo;ll do the same but instead use plants instead of animals/mammals/etc.  The plant kingdom has certain characteristics that hold true for all things defined as plants including such attributes as&mdash; they are cellular, they can convert energy from sunlight to food, they can propogate etc.</p>
 
-<p>I&rsquo;ll do the same but instead plants instead of animals/mammals/etc.  The plant kingdom has characteristics that are true for all things defined as plants such as attributes as they are cellular, they can convert energy from sunlight to food, they can propogate etc.</p>
-
-<p>There are two primary subclasses of plants: seed-bearing and spore-bearing. Both subclasses possess plant kingdom characteristics (cellular, absorb sunlight) but also possess additional specifics such as being able to have flowers, being able to either absorb water or circulate fluids throughout itself or being of a certain sex or asexual.</p>
+<p>There are two primary subclasses of plants: seed-bearing and spore-bearing. Both subclasses possess the primary plant kingdom characteristics (cellular, absorb sunlight) but they also possess additional specifics such as being able to have flowers, being able to either absorb water or circulate fluids throughout itself or being of a certain sex or asexual.</p>
 
 <p>So in Ruby:</p>
 
@@ -85,7 +83,7 @@ class Algae &lt; Plant
 end
 </code></pre>
 
-<p>The Rose class and Algae class are &ldquo;Child&rdquo; classes that inherit (denoted by &lt;) all characteristics of the &ldquo;Parent&rdquo; class Plant. But they have further specificity:</p>
+<p>The Rose class and Algae class are &ldquo;Child&rdquo; classes that inherit (denoted by <code>&lt;</code>) all characteristics of the &ldquo;Parent&rdquo; class Plant. This makes it easy to ascribe further specificity:</p>
 
 <pre><code>class Plant
     def live
@@ -107,9 +105,9 @@ class Moss &lt; Plant
 end
 </code></pre>
 
-<p>A Rose and Moss are a type of plant but also have their own specialized things they can do.  Its important to note that a Class can only inherit features from one other class.</p>
+<p>A Rose and Moss are a type of plant but also have their own specialized things they can do.  Its important to note that in Ruby, at least, a Class can only inherit features from <strong>one</strong> other class.</p>
 
-<p>This brings us to Modules and Mixins.  Modules are, according to <a href="http://www.ruby-doc.org/core-1.9.3/Module.html">Ruby docs</a>, a collection of methods and constants. Ruby itself possesses a number of modules in its standard library.  A quick example in IRB:</p>
+<p>This brings us to Modules and Mixins.  Modules are, according to <a href="http://www.ruby-doc.org/core-1.9.3/Module.html">Ruby docs</a>, a collection of methods and constants.  Hmmm. Need more help here. As it turns out, Ruby itself possesses a number of modules in its standard library.  A quick example in IRB:</p>
 
 <pre><code>irb&gt; Math.sqrt(2)
 =&gt;1.41421
@@ -159,7 +157,7 @@ class Moss &lt; Plant
 end
 </code></pre>
 
-<p>Methods within a module can either be instance methods or module level methods.  In the example above, the module is included within a class, thus the module&rsquo;s methods are &ldquo;mixed in&rdquo; as instance methods and apply to all instances of the Rose and Moss classes.</p>
+<p>Methods within a module can either be instance methods or module level methods.  In the example above, the module is included within a class, thus the module&rsquo;s methods are &ldquo;mixed in&rdquo; as instance methods and apply to all instances of the Rose and Moss classes. As</p>
 
 <p>Why may modules be a better choice over classes with inheritance?</p>
 
@@ -216,7 +214,7 @@ end
 [code omitted]
 </code></pre>
 
-<p>This serves as a start in learning about something unique and powerful to Ruby.  From the readings it seems that  other languages handle inheritance very differently (multiple inheritances etc.,).  Looking forward to putting some of this into greater practice going forward.</p>
+<p>This serves as a start in learning about something unique and powerful to Ruby.  From the readings it seems that  other languages handle inheritance very differently (multiple inheritances etc.,).  Furthermore, really cool things happen when we start looking at how, for instance, mixins from Ruby&rsquo;s standard library (eg., <code>include</code> Enumerable is very cool) can work with code in the class using it. Looking forward to putting some of this into greater practice going forward.</p>
 
 <p>Resources and other interesting posts on inheritance and modules:
 1. <a href="http://www.ruby-doc.org/core-1.9.3/Module.html">http://www.ruby-doc.org/core-1.9.3/Module.html</a>
