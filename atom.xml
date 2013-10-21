@@ -4,7 +4,7 @@
   <title><![CDATA[Learning to Code]]></title>
   <link href="http://margaretleedees2.github.io/atom.xml" rel="self"/>
   <link href="http://margaretleedees2.github.io/"/>
-  <updated>2013-10-21T04:40:46-04:00</updated>
+  <updated>2013-10-21T04:41:57-04:00</updated>
   <id>http://margaretleedees2.github.io/</id>
   <author>
     <name><![CDATA[Margaret Lee]]></name>
@@ -168,7 +168,7 @@ end
 [code omitted]
 </code></pre>
 
-<p>This serves as a start in learning about something unique and powerful to Ruby.  From the readings it seems that  other languages handle inheritance very differently (multiple inheritances etc.,).  Furthermore, really cool things happen when we start looking at how, for instance, mixins from Ruby&rsquo;s standard library (eg., <code>include</code> Enumerable is very cool) can work with code in the class using it. Looking forward to putting some of this into greater practice going forward.</p>
+<p>This serves as a start in learning about something unique and powerful to Ruby.  From the readings it seems that  other languages handle inheritance very differently (multiple inheritances etc.,).  Furthermore, really cool things happen when we start looking at how, for instance, mixins from Ruby&rsquo;s standard library (eg., <code>include</code>-ing Enumerable or Comparable is very cool) can work with code in the class using it. Looking forward to putting some of this into greater practice going forward.</p>
 
 <p>Resources and other interesting posts on inheritance and modules:
 1. <a href="http://www.ruby-doc.org/core-1.9.3/Module.html">http://www.ruby-doc.org/core-1.9.3/Module.html</a>
