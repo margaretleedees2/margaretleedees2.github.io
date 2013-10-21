@@ -6,60 +6,61 @@ comments: true
 categories: 
 ---
 
-Have been learning more about Ruby and wanted to understand better how interitance (and mixins) works.
+Had a discussion about Inheritance in class the other day and this is my exploration of it.
 
-The way I understand it, Classes help us make certain methods available to all instances of that class.  That ability to "share" methods prevents us from having to repeat those same methods over and over thus making our code more succinct.
+From what I can tell, classes help us from being redunant by making certain methods available to all instances of that class.  
 
-Inheritance allows us to have a Class with all its capabilities but then create specialized classes of that Class that automatically have all those capabilities and then some.  The original class is called the "Parent" class and the specialized class or classes are its "Child" classes.
+Inheritance seems to build on this notion of "sharing code" by allowing a Class to make available its capabilities to a sub-class which can include further specificity and methods.  
 
-So,
+It helped me to think in terms of taxonomy.
 
-	class Parent
+The plant kingdom have characteristics that are true to all kinds of plants such as they are cellualur, convert energy from sunlight to food etc.
+
+There are two primary subclasses of plants: seed-bearing and spore-bearing. Both subclasses possess plant kingdom characteristics (cellular, absorb sunlight) but also possess additional specifics such as ability to circulate fluids through their bodies or absorb via moisture surrounding them.  
+
+In Ruby:
+
+class Plant
+end
+
+class Rose <Plant
+end
+
+class Algae < Plant
+end
+
+
+The Rose class and Algae class are "Child" classes that inherit (denoted by <) all characteristics of the "Parent" class Plant.  
+
+class Plant
+	def live
+		puts "multicellular, can reproduce, absorbs light, circulate or absorb water"
 	end
+end
 
-	class Child < Parent
+class Rose <Plant
+	def make_flower
+		puts "leaf, stem, roots" 
 	end
+end
 
-The < indicates child inherits 
-
-
-
-
-
- 	def 
-		puts "#{self} loves Kathleen Battle "
+class Moss < Plant
+	def produce_spore
+		puts "simple, can live on another plant"
 	end
-
-	def establish_habit
-		puts "#{self.name} laughs inappropriately during sad times"
-	end
+end
 
 
+A Rose and Moss are a type of plant but also have their own specialized things they can do.
 
-When we need to convert an object to a string, we call to_s method on the object
+This brings us to Modules and Mixins.
 
-But we've also written classes that don't explicity implement to_s.
+Modules are another way that functionality can be "shared" between classes.  The difference here is that modules are not Classes and therefore do not have instances.  Module functions are able to be included or "mixed in" within a Class, however.
 
-These Classes respond successfully when we call to_s on them.
+In our example from above:
 
-This has to do with inheritance, subclassing, and how Ruby determines which method to run when you send a message to an object
-
-
-Original = Superclass/Parent
-Next class = Subclass/Child
-
-Child inherits all of the capabilities of its parent class. 
-
-All parent's instance methods are available in instances of the child
-
-######EXAMPLE HERE######
-
-While the child class defines no methods, when we create an instance of it, the child inherits all the methods of its parents.  Ruby goes all the way through its ancestors until it runs out of classes
-
-This explains why to_s is available to every object.  Rub is 
+module 
 
 
 
-
-
-
+We saw this in the Playlister code we reviewed Friday.
