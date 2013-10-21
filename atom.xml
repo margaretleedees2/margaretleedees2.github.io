@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Margaret's Octopress Blog]]></title>
+  <title><![CDATA[Learning to Code]]></title>
   <link href="http://margaretleedees2.github.io/atom.xml" rel="self"/>
   <link href="http://margaretleedees2.github.io/"/>
-  <updated>2013-10-21T02:30:10-04:00</updated>
+  <updated>2013-10-21T02:48:56-04:00</updated>
   <id>http://margaretleedees2.github.io/</id>
   <author>
     <name><![CDATA[Margaret Lee]]></name>
     
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
@@ -97,7 +96,7 @@ class Moss &lt; Plant
 end
 </code></pre>
 
-<p>Methods within a module can either be ins tance methods or module methods.  In the example above, the module is included (via &ldquo;include&rdquo;) in within a class, thus the module&rsquo;s methods are &ldquo;mixed in&rdquo; as instance methods and apply to all instances of the Rose and Moss classes.</p>
+<p>Methods within a module can either be instance methods or module methods.  In the example above, the module is included (via &ldquo;include&rdquo;) in within a class, thus the module&rsquo;s methods are &ldquo;mixed in&rdquo; as instance methods and apply to all instances of the Rose and Moss classes.</p>
 
 <p>Why is this better?</p>
 
@@ -106,7 +105,7 @@ end
 <pre><code>Modules are generally more flexible than superclasses.  Modules can be managed at runtime, because include is just  regular method call, while superclasses are set in stone as you write your class definitions.  Modules are much easier to use and test in isolation than tightly coupled hierachy of classes.   You can include as many modules as you like, while you can only have one superclass per class. 
 </code></pre>
 
-<p>Modules can also be applied at the Class level by adding &ldquo;extend Plant&rdquo; within the Moss and Rose Classes.  This would allows the module</p>
+<p>Modules can also be applied at the Class level by adding &ldquo;extend Plant&rdquo; within the Moss and Rose Classes.  This would allows the module to be extended</p>
 ]]></content>
   </entry>
   
