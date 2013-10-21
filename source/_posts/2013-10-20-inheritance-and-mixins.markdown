@@ -68,7 +68,7 @@ The `::` operator denotes which module Ruby should use for the value of a consta
 
 As mentioned in the Pickaxe, "Modules define a namespace, a sandbox in which your methods and constants can play without having to worry about being stepped on by other methods and constants." This is one important use of modules. 
 
-The other key important use of modules is that, like inheritance, modules allow functionality can be "shared" between classes thereby streamlining the number of times you have to write the same methods. As one person describes,
+The other key important use of modules is that, like inheritance, modules allow functionality to be "shared" between classes thereby streamlining the number of times you have to write the same methods. As one person describes,
 
 "mixins are a group of methods not yet attached to any class.  They exist in a module and are not useful until included in a class.  Once included they are now normal methods of a class." ([source](http://ruby.about.com/od/beginningruby/a/mixin.htm))
 
@@ -102,7 +102,7 @@ Methods within a module can either be instance methods or module level methods. 
 
 Why may modules be a better choice over classes with inheritance?
 
-As [this person](http://ducktypo.blogspot.com/2010/08/why-inheritance-sucks.html)  states: Modules are generally more flexible than superclasses.  Modules can be managed at runtime, because include is just  regular method call, while superclasses are set in stone as you write your class definitions.  Modules are much easier to use and test in isolation than tightly coupled hierachy of classes.   You can include as many modules as you like, while you can only have one superclass per class. 
+As [this person](http://ducktypo.blogspot.com/2010/08/why-inheritance-sucks.html)  states: Modules are generally more flexible than superclasses.  Modules can be managed at runtime, because `include` is just  regular method call, while superclasses are set in stone as you write your class definitions.  Modules are much easier to use and test in isolation than tightly coupled hierachy of classes.   You can include as many modules as you like, while you can only have one superclass per class. 
 
 Modules can also be applied at the Class level by "extending" within the Class.  This would allows the methods within the module to be accessed by other classes.  This piece of Avi code from Friday's Playlister was what had led me to look into inheritance, modules and mixins a little further to begin with:
 
@@ -151,7 +151,9 @@ We see in the partial Artist.rb file below, all the methods in module Findable a
 	  end
 	[code omitted]
 
-This serves as a start in learning about something unique and powerful to Ruby.  From the readings it seems that  other languages handle inheritance very differently (multiple inheritances etc.,).  Furthermore, really cool things happen when we start looking at how, for instance, mixins from Ruby's standard library (eg., `include`-ing Enumerable or Comparable is very cool) can work with code in the class using it. Looking forward to putting some of this into greater practice going forward.
+So the primary difference in usage as I try to apply this in my own code.  `include` applies to Class Instance Methods and `extend` when the module is to be extended to other classes instead of being included.  Access to the module method is done through the class instead of the instance.  
+
+This serves as a start in learning about something unique and powerful to Ruby.  From the readings it seems that  other languages handle inheritance very differently (multiple inheritances etc.,).  Furthermore, really cool things happen when we start looking at how, for instance, mixins from Ruby's standard library (eg, Enumerable, Comparable, or Math) can work with code in the class using it. Looking forward to putting some of this into greater practice going forward.
 
 
 Resources and other interesting posts on inheritance and modules: 
