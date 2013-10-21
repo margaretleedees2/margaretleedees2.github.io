@@ -3,11 +3,11 @@
 <html lang="en-GB">
 <head>
 	<meta charset="utf-8">
-	<title>inheritance-and-mixins  | Learning to Code</title>
+	<title>inheritance-and-modules  | Learning to Code</title>
 
 	<meta name="author" content="Margaret Lee">
 
-<meta name="description" content="At the end of last week, we discussed inheritance and modules. I needed to go over it again as not all of it sunk in during lecture-runtime. So here &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="At the end of last week, we discussed inheritance and modules. I needed to review it as not all of it had sunk-in at runtime-lecture. So here goes: &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -24,7 +24,7 @@
 
 <body>
 	<header id="header" class="inner"><h1><a href="/">Learning to Code</a></h1>
-<span class="tagline"></span>
+<span class="tagline">the marge way</span>
 <nav id="main-nav"><ul>
 	<li><a href="/about">About</a></li>
 	<li><a href="/archives">Archives</a></li>
@@ -48,7 +48,7 @@
 
 	<div id="content" class="inner"><article class="post">
 	<header>
-		<h2 class="title">Inheritance-and-mixins</h2>
+		<h2 class="title">Inheritance-and-modules</h2>
 		<div class="meta date">
 
 
@@ -63,15 +63,15 @@
 
 <time datetime="2013-10-20T18:24:00-04:00" pubdate data-updated="true">Oct 20<span>th</span>, 2013</time></div>
 	</header>
-	<div class="entry-content"><p>At the end of last week, we discussed inheritance and modules.  I needed to go over it again as not all of it sunk in during lecture-runtime.  So here goes:</p>
+	<div class="entry-content"><p>At the end of last week, we discussed inheritance and modules.  I needed to review it as not all of it had sunk-in at runtime-lecture.  So here goes:</p>
 
-<p>If classes save us from being redunant by making certain methods available to all instances of that class, then inheritance seems to build on that notion of &ldquo;sharing&rdquo; in that it allow a Class to make its capabilities available to a sub-class(es) which can then include further specificity and additional methods.</p>
+<p>If Ruby Classes free us from redunancy by making certain methods available to all instances of that class, then inheritance seems to build on that notion of &ldquo;sharing code&rdquo; in that it allow a Class to make its capabilities available to a sub-class(es) which can then include further specificity and additional methods.</p>
 
-<p>When I looked it up, many used taxonomies to [explain] (<a href="http://www.rubist.net/~slagell/ruby/inheritance.html">http://www.rubist.net/~slagell/ruby/inheritance.html</a>).</p>
+<p>When I looked it up, people liked using various taxonomies to help illustrate <a href="http://www.rubist.net/~slagell/ruby/inheritance.html">this</a>.</p>
 
-<p>So instead of mammals and fish, lets use plants.  The plant kingdom has characteristics that are true for all things defined as plants including properties like they are cellular, convert energy from sunlight to food, can propogate etc.</p>
+<p>I&rsquo;ll do the same but instead plants instead of animals/mammals/etc.  The plant kingdom has characteristics that are true for all things defined as plants such as attributes as they are cellular, they can convert energy from sunlight to food, they can propogate etc.</p>
 
-<p>There are two primary subclasses of plants: seed-bearing and spore-bearing. Both subclasses possess plant kingdom characteristics (cellular, absorb sunlight) but also possess additional specifics such as being able to have flowers, being able to either absorb water or circulate fluids throughout itself or be of a certain sex or be asexual.</p>
+<p>There are two primary subclasses of plants: seed-bearing and spore-bearing. Both subclasses possess plant kingdom characteristics (cellular, absorb sunlight) but also possess additional specifics such as being able to have flowers, being able to either absorb water or circulate fluids throughout itself or being of a certain sex or asexual.</p>
 
 <p>So in Ruby:</p>
 
@@ -109,22 +109,39 @@ end
 
 <p>A Rose and Moss are a type of plant but also have their own specialized things they can do.  Its important to note that a Class can only inherit features from one other class.</p>
 
-<p>This brings us to Modules and Mixins.  Modules are, according to Ruby docs [ruby-doc.org/core-2.0.0/Module.html], a collection of methods and constants.  They are another way that functionality can be &ldquo;shared&rdquo; between classes. I liked the following description[ruby.about.com/od/beginningruby/a/mixin.htm]</p>
+<p>This brings us to Modules and Mixins.  Modules are, according to <a href="http://www.ruby-doc.org/core-1.9.3/Module.html">Ruby docs</a>, a collection of methods and constants. Ruby itself possesses a number of modules in its standard library.  A quick example in IRB:</p>
 
-<p>It says that mixins are a group of methods not yet attached to any class.  They exist in a module and are not useful until included in a class.  Once included they are now normal methods of a class.</p>
+<pre><code>irb&gt; Math.sqrt(2)
+=&gt;1.41421
+irb&gt; Math::PI
+=&gt;3.14159   
+</code></pre>
+
+<p>The <code>::</code> operator denotes which module Ruby should use for the value of a constant. If we want to refer to the methods or constants of a module directly without using <code>::</code>, we can <code>include</code> that module:</p>
+
+<pre><code>irb&gt; include Math   
+=&gt;Object
+irb&gt; sqrt(2)
+=&gt;1.41421
+irb&gt; PI
+=&gt;3.14159
+</code></pre>
+
+<p>As mentioned in the Pickaxe, &ldquo;Modules define a namespace, a sandbox in which your methods and constants can play without having to worry about being stepped on by other methods and constants.&rdquo; This is one important use of modules.</p>
+
+<p>The other key important use of modules is that, like inheritance, modules allow functionality can be &ldquo;shared&rdquo; between classes thereby streamlining the number of times you have to write the same methods. As one person describes,</p>
+
+<p>&ldquo;mixins are a group of methods not yet attached to any class.  They exist in a module and are not useful until included in a class.  Once included they are now normal methods of a class.&rdquo; (<a href="http://ruby.about.com/od/beginningruby/a/mixin.htm">source</a>)</p>
 
 <p>So illustrating on the above Class inheritance structure:</p>
 
-<p>module Plant</p>
-
-<pre><code>def live
-    puts "multicellular, can reproduce, absorbs light, circulate or absorb water"
+<pre><code>module Plant
+    def live
+        puts "multicellular, can reproduce, absorbs light, circulate or absorb water"
+    end
 end
-</code></pre>
 
-<p>end</p>
-
-<pre><code>class Rose &lt;Plant
+class Rose &lt;Plant
     include Plant
 
     def make_flower
@@ -142,16 +159,70 @@ class Moss &lt; Plant
 end
 </code></pre>
 
-<p>Methods within a module can either be instance methods or module methods.  In the example above, the module is included (via &ldquo;include&rdquo;) in within a class, thus the module&rsquo;s methods are &ldquo;mixed in&rdquo; as instance methods and apply to all instances of the Rose and Moss classes.</p>
+<p>Methods within a module can either be instance methods or module level methods.  In the example above, the module is included within a class, thus the module&rsquo;s methods are &ldquo;mixed in&rdquo; as instance methods and apply to all instances of the Rose and Moss classes.</p>
 
-<p>Why is this better?</p>
+<p>Why may modules be a better choice over classes with inheritance?</p>
 
-<p>This person explains it nicely [dycktypo.blogspot.com/2010/08/why-inheritance-sucks.html]</p>
+<p>As <a href="http://ducktypo.blogspot.com/2010/08/why-inheritance-sucks.html">this person</a>  states: Modules are generally more flexible than superclasses.  Modules can be managed at runtime, because include is just  regular method call, while superclasses are set in stone as you write your class definitions.  Modules are much easier to use and test in isolation than tightly coupled hierachy of classes.   You can include as many modules as you like, while you can only have one superclass per class.</p>
 
-<pre><code>Modules are generally more flexible than superclasses.  Modules can be managed at runtime, because include is just  regular method call, while superclasses are set in stone as you write your class definitions.  Modules are much easier to use and test in isolation than tightly coupled hierachy of classes.   You can include as many modules as you like, while you can only have one superclass per class. 
+<p>Modules can also be applied at the Class level by &ldquo;extending&rdquo; within the Class.  This would allows the methods within the module to be accessed by other classes.  This piece of Avi code from Friday&rsquo;s Playlister was what had led me to look into inheritance, modules and mixins a little further to begin with:</p>
+
+<p><dt>memorable.rb</dt></p>
+
+<pre><code>module Memorable
+  module InstanceMethods
+    def initialize
+      self.class.all &lt;&lt; self
+    end
+  end
+
+  module ClassMethods
+    def self.extended(base)
+      base.reset_all
+    end
+
+      def reset_all
+      @all = [] #still do not quite understand why we don't use @@all here
+    end
+
+      def count
+      self.all.size
+    end
+
+    def all
+      @all
+    end
+  end
+end
 </code></pre>
 
-<p>Modules can also be applied at the Class level by adding &ldquo;extend Plant&rdquo; within the Moss and Rose Classes.  This would allows the module to be extended</p>
+<p>We see in the partial Artist.rb file below, all the methods in module Findable and ClassMethods specifically in Memorable will be Artist Class methods.  I also noted the use of <code>super</code>, whereby Ruby searches upward in the ancestry to find the method <code>initialize</code> so that it doesn&rsquo;t need to be written here again.</p>
+
+<p><dt>artist.rb</dt></p>
+
+<pre><code>class Artist
+  attr_accessor :name
+  attr_reader :songs
+
+  extend Memorable::ClassMethods
+  include Memorable::InstanceMethods #modules
+
+  extend Findable
+
+  def initialize
+    super
+    @songs = []
+  end
+[code omitted]
+</code></pre>
+
+<p>This serves as a start in learning about something unique and powerful to Ruby.  From the readings it seems that  other languages handle inheritance very differently (multiple inheritances etc.,).  Looking forward to putting some of this into greater practice going forward.</p>
+
+<p>Resources and other interesting posts on inheritance and modules:
+1. <a href="http://www.ruby-doc.org/core-1.9.3/Module.html">http://www.ruby-doc.org/core-1.9.3/Module.html</a>
+2. <a href="http://www.rubyist.net/~slagell/ruby/modules.html">http://www.rubyist.net/~slagell/ruby/modules.html</a>
+3. <a href="http://ducktypo.blogspot.com/2010/08/why-inheritance-sucks.html">http://ducktypo.blogspot.com/2010/08/why-inheritance-sucks.html</a>
+4. <a href="http://ruby.about.com/od/beginningruby/a/mixin.htm">http://ruby.about.com/od/beginningruby/a/mixin.htm</a></p>
 </div>
 	
 
@@ -161,19 +232,19 @@ end
 	<div class="share">
 		<ul>
 			<li>
-  <a href="https://twitter.com/intent/tweet?text=inheritance-and-mixins by @&url=http://margaretleedees2.github.io/blog/2013/10/20/inheritance-and-mixins/" title="Share inheritance-and-mixins on Twitter">
+  <a href="https://twitter.com/intent/tweet?text=inheritance-and-modules by @&url=http://margaretleedees2.github.io/blog/2013/10/20/inheritance-and-mixins/" title="Share inheritance-and-modules on Twitter">
     <img src="/images/social/twitter.png" />
   </a>
 </li>
 
 			<li>
-  <a href="https://www.facebook.com/sharer.php?u=http://margaretleedees2.github.io/blog/2013/10/20/inheritance-and-mixins/" title="Share inheritance-and-mixins on Facebook">
+  <a href="https://www.facebook.com/sharer.php?u=http://margaretleedees2.github.io/blog/2013/10/20/inheritance-and-mixins/" title="Share inheritance-and-modules on Facebook">
     <img src="/images/social/facebook.png" />
   </a>
 </li>
 
 			<li>
-  <a href="https://plus.google.com/share?url=http://margaretleedees2.github.io/blog/2013/10/20/inheritance-and-mixins/" title="Share inheritance-and-mixins on Google Plus">
+  <a href="https://plus.google.com/share?url=http://margaretleedees2.github.io/blog/2013/10/20/inheritance-and-mixins/" title="Share inheritance-and-modules on Google Plus">
     <img src="/images/social/google.png" />
   </a>
 </li>
