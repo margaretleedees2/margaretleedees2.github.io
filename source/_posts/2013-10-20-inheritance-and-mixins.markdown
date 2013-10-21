@@ -151,7 +151,7 @@ We see in the partial Artist.rb file below, all the methods in module Findable a
 	  end
 	[code omitted]
 
-This serves as a start in learning about something unique and powerful to Ruby.  From the readings it seems that  other languages handle inheritance very differently (multiple inheritances etc.,).  Furthermore, really cool things happen when we start looking at how, for instance, mixins from Ruby's standard library (eg., `include` Enumerable is very cool) can work with code in the class using it. Looking forward to putting some of this into greater practice going forward.
+This serves as a start in learning about something unique and powerful to Ruby.  From the readings it seems that  other languages handle inheritance very differently (multiple inheritances etc.,).  Furthermore, really cool things happen when we start looking at how, for instance, mixins from Ruby's standard library (eg., `include`-ing Enumerable or Comparable is very cool) can work with code in the class using it. Looking forward to putting some of this into greater practice going forward.
 
 
 Resources and other interesting posts on inheritance and modules: 
